@@ -4,4 +4,10 @@ html {
 
 *, *::before, *::after {
     box-sizing: inherit;
+    border: 2px solid red;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
 }
