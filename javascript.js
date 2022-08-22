@@ -22,6 +22,18 @@ items.forEach((item) => {
 
 function promptFunction() {
     let size = Number(prompt('How many squares?'));
+
+    items.forEach((item) => {
+        container.removeChild(item);
+    })
+
+    for (let i = 1; i <= Math.pow(size, 2); i++) {
+        const div = document.createElement('div');
+        div.setAttribute('class', 'item');
+        container.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr)`);
+        div.textContent = i;
+        container.appendChild(div);
+    }
 }
 
 buttonCreate.addEventListener('click', promptFunction);

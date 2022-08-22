@@ -10,8 +10,7 @@ html {
 #container {
     border: 1px solid black;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto 
-                           auto auto;
+    width: 960px;
 }
 
 .item {
