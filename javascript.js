@@ -1,4 +1,5 @@
 const container = document.querySelector('#container');
+const buttonCreate = document.querySelector('#buttonCreate');
 
 // Create grid
 for (let i = 1; i <= 256; i++) {
@@ -13,8 +14,14 @@ const items = document.querySelectorAll('.item');
 // Change color to grid items when they're hovered
 items.forEach((item) => {
     function hover() {
-        item.style.backgroundColor = 'black';
+        item.style.backgroundColor = 'red';
     }
 
     item.addEventListener('mouseover', hover);
 })
+
+function promptFunction() {
+    let size = prompt('How many squares?');
+}
+
+buttonCreate.addEventListener('click', promptFunction);

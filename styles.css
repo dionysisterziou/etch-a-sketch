@@ -4,11 +4,16 @@ html {
 
 *, *::before, *::after {
     box-sizing: inherit;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 #container {
+    border: 1px solid black;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto 
                            auto auto;
+}
+
+.item {
+    border: 1px solid black;
 }
