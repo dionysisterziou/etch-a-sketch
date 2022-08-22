@@ -21,7 +21,7 @@ items.forEach((item) => {
 })
 
 function promptFunction() {
-    let size = prompt('How many squares?');
+    let size = Number(prompt('How many squares?'));
 }
 
 buttonCreate.addEventListener('click', promptFunction);
