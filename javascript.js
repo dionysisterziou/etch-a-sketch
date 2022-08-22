@@ -9,7 +9,7 @@ for (let i = 1; i <= 256; i++) {
     container.appendChild(div);
 }
 
-const items = document.querySelectorAll('.item');
+let items = document.querySelectorAll('.item');
 
 // Change color to grid items when they're hovered
 items.forEach((item) => {
@@ -34,6 +34,16 @@ function promptFunction() {
         div.textContent = i;
         container.appendChild(div);
     }
+
+    items = document.querySelectorAll('.item');
+
+    items.forEach((item) => {
+        function hover() {
+            item.style.backgroundColor = 'red';
+        }
+    
+        item.addEventListener('mouseover', hover);
+    })
 }
 
 buttonCreate.addEventListener('click', promptFunction);
