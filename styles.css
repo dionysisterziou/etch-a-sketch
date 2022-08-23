@@ -4,7 +4,6 @@ html {
 
 *, *::before, *::after {
     box-sizing: inherit;
-    /* border: 2px solid red; */
 }
 
 #container {
@@ -15,4 +14,5 @@ html {
 
 .item {
     border: 1px solid black;
+    aspect-ratio: 1/1;
 }
