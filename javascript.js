@@ -5,6 +5,7 @@ const buttonCreate = document.querySelector('#buttonCreate');
 for (let i = 1; i <= 256; i++) {
     const div = document.createElement('div');
     div.setAttribute('class', 'item');
+    container.setAttribute('style', 'grid-template-columns: repeat(16, 1fr)');
     div.textContent = i;
     container.appendChild(div);
 }
