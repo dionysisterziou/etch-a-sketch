@@ -22,8 +22,15 @@ items.forEach((item) => {
 })
 
 function promptFunction() {
-    let size = Number(prompt('How many squares?'));
+    let size = Number(prompt('How many squares? (Maximum: 100)'));
 
+    if (size > 100) {
+        do {
+            size = Number(prompt('How many squares? (Maximum: 100)'));
+        } while (size > 100);
+    }
+
+    // Removes previous squares
     items.forEach((item) => {
         container.removeChild(item);
     })
