@@ -9,7 +9,8 @@ html {
 #container {
     border: 1px solid black;
     display: grid;
-    width: 960px;
+    width: 550px;
+    height: 550px;
 }
 
 .item {

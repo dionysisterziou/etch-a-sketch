@@ -5,7 +5,7 @@ const buttonCreate = document.querySelector('#buttonCreate');
 for (let i = 1; i <= 256; i++) {
     const div = document.createElement('div');
     div.setAttribute('class', 'item');
-    container.setAttribute('style', `grid-template-columns: repeat(16, 35px)`);
+    container.setAttribute('style', `grid-template-columns: repeat(16, 1fr)`);
     div.textContent = '';
     container.appendChild(div);
 }
@@ -38,7 +38,7 @@ function promptFunction() {
     for (let i = 1; i <= Math.pow(size, 2); i++) {
         const div = document.createElement('div');
         div.setAttribute('class', 'item');
-        container.setAttribute('style', `grid-template-columns: repeat(${size}, 35px)`);
+        container.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr)`);
         div.textContent = '';
         container.appendChild(div);
     }
