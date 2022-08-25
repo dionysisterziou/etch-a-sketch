@@ -1,10 +1,10 @@
 const container = document.querySelector('#container');
 const buttonCreate = document.querySelector('#buttonCreate');
 
-function createGrid() {
-    // Default grid size
-    let size = 16;
+// Default grid size
+let size = 16;
 
+function createGrid() {
     function calculateSize(size) {
         for (let i = 1; i <= Math.pow(size, 2); i++) {
             const div = document.createElement('div');
@@ -15,21 +15,31 @@ function createGrid() {
         }
     }
 
+    function addHover() {
+        let items = document.querySelectorAll('.item');
+        
+        items.forEach((item) => {
+            function hover() {
+                item.style.backgroundColor = 'black';
+            }
+        
+            item.addEventListener('mouseover', hover);
+        })
+    }
+
     calculateSize(size);
+    addHover();
 }
 
 createGrid();
 
-let items = document.querySelectorAll('.item');
+function removeGrid() {
+    let items = document.querySelectorAll('.item');
 
-// Change color to grid items when they're hovered
-items.forEach((item) => {
-    function hover() {
-        item.style.backgroundColor = 'black';
-    }
-
-    item.addEventListener('mouseover', hover);
-})
+    items.forEach((item) => {
+        container.removeChild(item);
+    })
+}
 
 function promptFunction() {
     size = Number(prompt('How many squares? (Maximum: 100)'));
@@ -40,22 +50,8 @@ function promptFunction() {
         } while (size > 100);
     }
 
-    // Removes previous squares
-    items.forEach((item) => {
-        container.removeChild(item);
-    })
-
+    removeGrid();
     createGrid();
-
-    items = document.querySelectorAll('.item');
-
-    items.forEach((item) => {
-        function hover() {
-            item.style.backgroundColor = 'black';
-        }
-    
-        item.addEventListener('mouseover', hover);
-    })
 }
 
 buttonCreate.addEventListener('click', promptFunction);
