@@ -2,7 +2,6 @@ const container = document.querySelector('#container');
 const buttonCreate = document.querySelector('#buttonCreate');
 
 let size = 16; // Default grid size
-let exists = false;
 
 function calculateSize(size) {
     for (let i = 1; i <= Math.pow(size, 2); i++) {
@@ -36,15 +35,7 @@ function removeGrid() {
 
 
 function createGrid() {
-    if (exists === false) {
-        calculateSize(size);
-
-        exists = true;
-    } else {
-        removeGrid();
-        calculateSize(size);
-    }
-
+    calculateSize(size);
     addHover();
 }
 
@@ -59,6 +50,7 @@ function promptFunction() {
         } while (size > 100);
     }
 
+    removeGrid();
     createGrid();
 }
 
