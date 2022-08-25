@@ -18,11 +18,19 @@ function addHover() {
     let items = document.querySelectorAll('.item');
     
     items.forEach((item) => {
-        function hover() {
+        function changeColor() {
             item.style.backgroundColor = 'black';
         }
     
-        item.addEventListener('mouseover', hover);
+        item.addEventListener('mouseover', changeColor);
+    })
+}
+
+function removeGrid() {
+    let items = document.querySelectorAll('.item');
+
+    items.forEach((item) => {
+        container.removeChild(item);
     })
 }
 
@@ -41,14 +49,6 @@ function createGrid() {
 }
 
 createGrid();
-
-function removeGrid() {
-    let items = document.querySelectorAll('.item');
-
-    items.forEach((item) => {
-        container.removeChild(item);
-    })
-}
 
 function promptFunction() {
     size = Number(prompt('How many squares? (Maximum: 100)'));
