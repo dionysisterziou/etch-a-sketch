@@ -1,21 +1,34 @@
 const container = document.querySelector('#container');
 const buttonCreate = document.querySelector('#buttonCreate');
+let size = 16;
 
-// Create grid
-for (let i = 1; i <= 256; i++) {
-    const div = document.createElement('div');
-    div.setAttribute('class', 'item');
-    container.setAttribute('style', `grid-template-columns: repeat(16, 1fr)`);
-    div.textContent = '';
-    container.appendChild(div);
+function createGrid(size) {
+    for (let i = 1; i <= Math.pow(size, 2); i++) {
+        const div = document.createElement('div');
+        div.setAttribute('class', 'item');
+        container.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr)`);
+        div.textContent = '';
+        container.appendChild(div);
+    }
 }
+
+createGrid(size);
+
+// Create default (16x16) grid
+// for (let i = 1; i <= 256; i++) {
+//     const div = document.createElement('div');
+//     div.setAttribute('class', 'item');
+//     container.setAttribute('style', `grid-template-columns: repeat(16, 1fr)`);
+//     div.textContent = '';
+//     container.appendChild(div);
+// }
 
 let items = document.querySelectorAll('.item');
 
 // Change color to grid items when they're hovered
 items.forEach((item) => {
     function hover() {
-        item.style.backgroundColor = 'red';
+        item.style.backgroundColor = 'black';
     }
 
     item.addEventListener('mouseover', hover);
@@ -35,19 +48,19 @@ function promptFunction() {
         container.removeChild(item);
     })
 
-    for (let i = 1; i <= Math.pow(size, 2); i++) {
-        const div = document.createElement('div');
-        div.setAttribute('class', 'item');
-        container.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr)`);
-        div.textContent = '';
-        container.appendChild(div);
-    }
+    // for (let i = 1; i <= Math.pow(size, 2); i++) {
+    //     const div = document.createElement('div');
+    //     div.setAttribute('class', 'item');
+    //     container.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr)`);
+    //     div.textContent = '';
+    //     container.appendChild(div);
+    // }
 
     items = document.querySelectorAll('.item');
 
     items.forEach((item) => {
         function hover() {
-            item.style.backgroundColor = 'red';
+            item.style.backgroundColor = 'black';
         }
     
         item.addEventListener('mouseover', hover);
