@@ -13,12 +13,18 @@ function calculateSize(size) {
     }
 }
 
+console.log(Math.floor(Math.random() * 256));
+
 function addHover() {
     let items = document.querySelectorAll('.item');
     
     items.forEach((item) => {
         function changeColor() {
-            item.style.backgroundColor = 'black';
+            const red = Math.floor(Math.random() * 256); // Math.floor(Math.random() * 255 + 1) for both values to be inclusive 
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+
+            item.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
         }
     
         item.addEventListener('mouseover', changeColor);
