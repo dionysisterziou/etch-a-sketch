@@ -3,7 +3,7 @@ const buttonCreate = document.querySelector('#buttonCreate');
 
 let size = 16; // Default grid size
 
-function calculateSize(size) {
+function calculateGridSize(size) {
     for (let i = 1; i <= Math.pow(size, 2); i++) {
         const div = document.createElement('div');
         div.setAttribute('class', 'item');
@@ -11,6 +11,15 @@ function calculateSize(size) {
         div.textContent = '';
         container.appendChild(div);
     }
+}
+
+// This functions makes the color 10% darker
+function addBlack(item) {
+    const REGEX = /\d?\.?\d/; 
+    let brightness = window.getComputedStyle(item).filter;
+    let amount = Number(brightness.match(REGEX)[0]);
+
+    item.style.filter = `brightness(${amount - 0.1})`;
 }
 
 function changeColor(item) {
@@ -21,11 +30,7 @@ function changeColor(item) {
     if (!item.target.style.backgroundColor) {
         item.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     } else {
-        const REGEX = /\d?\.?\d/; 
-        let brightness = window.getComputedStyle(item.target).filter;
-        let amount = Number(brightness.match(REGEX)[0]);
-
-        item.target.style.filter = `brightness(${amount - 0.1})`;
+        addBlack(item.target);
     }
 
 }
@@ -48,7 +53,7 @@ function removeGrid() {
 
 
 function createGrid() {
-    calculateSize(size);
+    calculateGridSize(size);
     addHover();
 }
 
