@@ -6,7 +6,7 @@ html {
     box-sizing: inherit;
 }
 
-#container {
+#gridContainer {
     border: 1px solid black;
     display: grid;
     width: 550px;
