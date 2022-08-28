@@ -13,7 +13,7 @@ function calculateGridSize(size) {
     }
 }
 
-// This functions makes the color 10% darker
+// This function makes the color 10% darker
 function addBlack(item) {
     const REGEX = /\d?\.?\d/; 
     let brightness = window.getComputedStyle(item).filter;
