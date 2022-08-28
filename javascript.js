@@ -13,20 +13,27 @@ function calculateSize(size) {
     }
 }
 
-console.log(Math.floor(Math.random() * 256));
+function changeColor(item) {
+    let red = Math.floor(Math.random() * 256);; // Math.floor(Math.random() * 255 + 1) for both values to be inclusive 
+    let green = Math.floor(Math.random() * 256);;
+    let blue = Math.floor(Math.random() * 256);;
+
+    if (!item.target.style.backgroundColor) {
+        item.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    } else {
+        const REGEX = /\d?\.?\d/; 
+        let brightness = window.getComputedStyle(item.target).filter;
+        let amount = Number(brightness.match(REGEX)[0]);
+
+        item.target.style.filter = `brightness(${amount - 0.1})`;
+    }
+
+}
 
 function addHover() {
     let items = document.querySelectorAll('.item');
-    
-    items.forEach((item) => {
-        function changeColor() {
-            const red = Math.floor(Math.random() * 256); // Math.floor(Math.random() * 255 + 1) for both values to be inclusive 
-            const green = Math.floor(Math.random() * 256);
-            const blue = Math.floor(Math.random() * 256);
 
-            item.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-        }
-    
+    items.forEach(item => {
         item.addEventListener('mouseover', changeColor);
     })
 }
