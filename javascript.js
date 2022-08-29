@@ -61,7 +61,6 @@ createGrid();
 
 function promptFunction() {
     size = Number(prompt('How many squares? (Maximum: 100)'));
-    console.log(size);  
 
     if (size === 0 || Number.isNaN(size) || size > 100) {
         do {
