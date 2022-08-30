@@ -8,6 +8,13 @@ html {
     /* border: 2px solid red; */
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
 h1 {
     font-size: 70px;
     text-align: center;
@@ -44,4 +51,8 @@ button:hover {
     aspect-ratio: 1;
     filter: brightness(1);
     border: 1px solid black;
+}
+
+footer {
+    margin-top: auto;
 }
