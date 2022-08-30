@@ -5,7 +5,6 @@ html {
 
 *, *::before, *::after {
     box-sizing: inherit;
-    /* border: 2px solid red; */
 }
 
 body {
@@ -56,5 +55,10 @@ button:hover {
 }
 
 footer {
+    background-color: #66023C;
+    color: #807F03;
     margin-top: auto;
+    padding: 25px 0;
+    text-align: center;
+    width: 100%;
 }
