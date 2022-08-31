@@ -1,20 +1,74 @@
 html {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
-#container {
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 70px;
+    text-align: center;
+}
+
+main {
+    align-items: center;
+    gap: 100px;
+    display: flex;
+    justify-content: center;
+    width: 85%;
+}
+
+button {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 60px;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#gridContainer {
     border: 1px solid black;
     display: grid;
     width: 550px;
     height: 550px;
 }
 
+/* Each square inside the grid */
 .item {
     aspect-ratio: 1;
     filter: brightness(1);
     border: 1px solid black;
+}
+
+footer {
+    align-items: center;
+    background-color: #66023C;
+    color: #807F03;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    min-height: 50px;
+    width: 100%;
+}
+
+/* Disables Google Translate's pop up box  */
+#gtx-trans {
+    display: none;
 }

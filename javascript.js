@@ -1,4 +1,4 @@
-const container = document.querySelector('#container');
+const gridContainer = document.querySelector('#gridContainer');
 const buttonCreate = document.querySelector('#buttonCreate');
 
 let size = 16; // Default grid size
@@ -7,9 +7,9 @@ function calculateGridSize(size) {
     for (let i = 1; i <= Math.pow(size, 2); i++) {
         const div = document.createElement('div');
         div.setAttribute('class', 'item');
-        container.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr)`);
+        gridContainer.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr)`);
         div.textContent = '';
-        container.appendChild(div);
+        gridContainer.appendChild(div);
     }
 }
 
@@ -47,7 +47,7 @@ function removeGrid() {
     let items = document.querySelectorAll('.item');
 
     items.forEach((item) => {
-        container.removeChild(item);
+        gridContainer.removeChild(item);
     })
 }
 
