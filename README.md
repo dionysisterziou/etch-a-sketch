@@ -1,3 +1,3 @@
 # etch-a-sketch
 
-Something between a sketchpad an an Etch-A-Sketch.
+Something between a sketchpad and an Etch-A-Sketch.
