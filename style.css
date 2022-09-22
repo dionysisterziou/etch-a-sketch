@@ -1,3 +1,7 @@
+:root {
+    font-size: 62.5%;
+}
+
 html {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -12,12 +16,12 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    font-size: 1.6rem;
     height: 100vh;
-    margin: 0;
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 7rem;
     text-align: center;
 }
 
@@ -34,7 +38,7 @@ button {
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.8rem;
     padding: 10px 60px;
     transition: 0.2s;
 }
@@ -43,7 +47,7 @@ button:hover {
     transform: scale(1.1);
 }
 
-#gridContainer {
+.grid-container {
     border: 1px solid black;
     display: grid;
     width: 550px;

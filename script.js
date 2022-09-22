@@ -1,7 +1,8 @@
 const gridContainer = document.querySelector('#gridContainer');
 const buttonCreate = document.querySelector('#buttonCreate');
 
-let size = 16; // Default grid size
+// Default grid size
+let size = 16; 
 
 function calculateGridSize(size) {
     for (let i = 1; i <= Math.pow(size, 2); i++) {
@@ -23,7 +24,8 @@ function addBlack(item) {
 }
 
 function changeColor(item) {
-    let red = Math.floor(Math.random() * 256);; // Math.floor(Math.random() * 255 + 1) for both values to be inclusive 
+    // Math.floor(Math.random() * 255 + 1) for both values to be inclusive 
+    let red = Math.floor(Math.random() * 256);; 
     let green = Math.floor(Math.random() * 256);;
     let blue = Math.floor(Math.random() * 256);;
 
